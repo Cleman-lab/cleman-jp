@@ -19,5 +19,4 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /cleman.jp/public_html/
-        # もし/public_html/直下にアップロードする場合は上記を修正してください
+        server-dir: /

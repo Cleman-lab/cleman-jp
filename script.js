@@ -1,4 +1,4 @@
-// CLEMAN — Nav active state on scroll
+// CLEMAN — Simple nav toggle and active state
 
 (function () {
   'use strict';
@@ -8,41 +8,24 @@
   const toggle = document.getElementById('nav-toggle');
   const navLinksContainer = document.getElementById('nav-links');
 
-  // ── Scrolled border ──────────────────────────────────────────
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 10);
-    updateActiveLink();
-  }, { passive: true });
-
-  // ── Active nav link on scroll ─────────────────────────────────
-  function updateActiveLink() {
-    const scrollPos = window.scrollY + 80;
-    const sections = ['home', 'wellness', 'beauty', 'art', 'about', 'contact'];
-
-    let current = 'home';
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && el.offsetTop <= scrollPos) current = id;
-    });
-
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href').replace('#', '');
-      link.classList.toggle('active', href === current);
-    });
-  }
-
-  // ── Mobile menu ────────────────────────────────────────────────
+  // Mobile menu toggle
   if (toggle) {
     toggle.addEventListener('click', () => {
-      navLinksContainer.classList.toggle('open');
+      navLinksContainer.classList.toggle('active');
     });
   }
 
-  // Close menu on link click
+  // Set active link based on current URL
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split('/').pop() || 'index.html';
+
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navLinksContainer.classList.remove('open');
-    });
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
   });
 
 })();

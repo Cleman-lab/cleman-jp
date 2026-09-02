@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | CLEMAN 合同会社クレマン</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">CLEMAN</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="wellness.html" class="nav-link">WELLNESS</a></li>
+      <li><a href="beauty.html"   class="nav-link">BEAUTY</a></li>
+      <li><a href="art.html"      class="nav-link">ART</a></li>
+      <li><a href="about.html"    class="nav-link">ABOUT</a></li>
+      <li><a href="contact.html"  class="nav-link active">CONTACT</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="メニュー">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div style="padding-top: var(--nav-h);">
+    <!-- ── FOOTER / CONTACT ── -->
+    <footer class="footer-dark" id="contact" style="min-height: calc(100vh - var(--nav-h));">
+      <div class="footer-top">
+        <div class="footer-left">
+          <h2 class="footer-heading"><em>Connect with Cleman</em></h2>
+          <a href="mailto:contact@cleman.jp" class="footer-email">contact@cleman.jp</a>
+        </div>
+        <div class="footer-right">
+          <div class="footer-info-row">
+            <span class="fi-label">COMPANY</span>
+            <span class="fi-value">合同会社CLEMAN / Cleman LLC</span>
+          </div>
+          <div class="footer-info-row">
+            <span class="fi-label">EST.</span>
+            <span class="fi-value">2025</span>
+          </div>
+          <div class="footer-info-row">
+            <span class="fi-label">SERVICES</span>
+            <span class="fi-value">WELLNESS &bull; BEAUTY &bull; ART</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="footer-form-wrap" id="contact-form">
+        <form class="contact-form"
+              action="https://formsubmit.co/contact@cleman.jp" method="POST">
+          <input type="hidden" name="_subject" value="CLEMANへのお問い合わせ">
+          <input type="hidden" name="_next" value="https://cleman.jp">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="name" required placeholder="山田 花子">
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">メッセージ</label>
+            <textarea id="message" name="message" required rows="5"
+                      placeholder="ご用件をご記入ください"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">送信する</button>
+        </form>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 CLEMAN LLC</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

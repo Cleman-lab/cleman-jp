@@ -263,6 +263,7 @@ ul  { list-style: none; }
 .detail-img {
   overflow: hidden;
   background: #e8e4de;
+  aspect-ratio: 1 / 1;
 }
 
 .detail-img img {
